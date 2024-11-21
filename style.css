@@ -1,0 +1,46 @@
+body {
+    background-color: #323232;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    color: white;
+}
+h1{
+    text-align: center;
+vertical-align: middle;
+}
+table {
+width: 300px;
+height: 300px;
+border-collapse: collapse;
+border-spacing: 0;
+}
+#content{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+th, td {
+width: 100px;
+height: 100px;
+border: 5px solid white;
+padding: 5px;
+text-align: center;
+vertical-align: middle;
+}
+
+th:first-child, td:first-child {
+border-left: none;
+}
+
+th:last-child, td:last-child {
+border-right: none;
+}
+
+tr:first-child th, tr:first-child td {
+border-top: none;
+}
+
+tr:last-child th, tr:last-child td {
+border-bottom: none;
+}
