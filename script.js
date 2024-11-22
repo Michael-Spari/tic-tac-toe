@@ -105,13 +105,20 @@ function drawWinningLine(combination) {
     const cellC = table.rows[Math.floor(c / 3)].cells[c % 3];
     const rectA = cellA.getBoundingClientRect();
     const rectC = cellC.getBoundingClientRect();
+    const contentRect = contentDiv.getBoundingClientRect();
 
-    line.style.left = `${rectA.left + rectA.width / 2}px`;
-    line.style.top = `${rectA.top + rectA.height / 2}px`;
-    line.style.width = `${Math.sqrt(Math.pow(rectC.left - rectA.left, 2) + Math.pow(rectC.top - rectA.top, 2))}px`;
-    line.style.transform = `rotate(${Math.atan2(rectC.top - rectA.top, rectC.left - rectA.left) * 180 / Math.PI}deg)`;
+    const startX = rectA.left + rectA.width / 2 - contentRect.left;
+    const startY = rectA.top + rectA.height / 2 - contentRect.top;
+    const endX = rectC.left + rectC.width / 2 - contentRect.left;
+    const endY = rectC.top + rectC.height / 2 - contentRect.top;
 
-    document.getElementById('content').appendChild(line);
+    line.style.left = `${startX}px`;
+    line.style.top = `${startY}px`;
+    line.style.width = `${Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2))}px`;
+    line.style.transformOrigin = '0 0';
+    line.style.transform = `rotate(${Math.atan2(endY - startY, endX - startX) * 180 / Math.PI}deg)`;
+
+    contentDiv.appendChild(line);
 }
 
 function handleClick(index, cell) {
