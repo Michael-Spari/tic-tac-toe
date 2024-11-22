@@ -6,11 +6,11 @@ body {
 }
 h1{
     text-align: center;
-vertical-align: middle;
+    vertical-align: middle;
 }
 table {
-width: 300px;
-height: 300px;
+width: 340px;
+height: 340px;
 border-collapse: collapse;
 border-spacing: 0;
 }
@@ -19,6 +19,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
+position: relative;
 }
 th, td {
 width: 100px;
@@ -43,4 +44,8 @@ border-top: none;
 
 tr:last-child th, tr:last-child td {
 border-bottom: none;
+}
+td:hover {
+background-color: rgba(255, 255, 255, 0.3);
+cursor: pointer;
 }
