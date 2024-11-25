@@ -117,7 +117,6 @@ function drawWinningLine(combination) {
     line.style.width = `${Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2))}px`;
     line.style.transformOrigin = '0 0';
     line.style.transform = `rotate(${Math.atan2(endY - startY, endX - startX) * 180 / Math.PI}deg)`;
-
     contentDiv.appendChild(line);
 }
 
@@ -131,3 +130,20 @@ function handleClick(index, cell) {
         }
     }
 }
+
+function startNew() {
+    fields = [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+    ];
+    currentPlayer = 'circle';
+    renderTable();
+}
+    
